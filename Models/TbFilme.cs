@@ -32,13 +32,13 @@ namespace APIFILMES.Models
         [Column("bt_disponivel")]
         public bool? BtDisponivel { get; set; }
         [Column("dt_lancamento")]
-        public DateOnly? DtLancamento { get; set; }
+        public DateTime? DtLancamento { get; set; }
         [Column("id_diretor")]
-        public int IdDiretor { get; set; }
+        public int? IdDiretor { get; set; }
 
         [ForeignKey("IdDiretor")]
         [InverseProperty("TbFilmes")]
-        public virtual TbDiretor IdDiretorNavigation { get; set; } = null!;
+        public virtual TbDiretor? IdDiretorNavigation { get; set; }
         [InverseProperty("IdFilmeNavigation")]
         public virtual ICollection<TbFilmeAtor> TbFilmeAtors { get; set; }
     }

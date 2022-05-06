@@ -57,7 +57,6 @@ namespace APIFILMES.Models
                 entity.HasOne(d => d.IdDiretorNavigation)
                     .WithMany(p => p.TbFilmes)
                     .HasForeignKey(d => d.IdDiretor)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_tb_filme_tb_diretor");
             });
 
